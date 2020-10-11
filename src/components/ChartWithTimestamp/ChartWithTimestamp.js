@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ApexChart from "react-apexcharts";
+import moment from "moment";
 
 const ChartWithTimestamp = (props) => {
   const [state, setState] = useState({
@@ -40,7 +41,9 @@ const ChartWithTimestamp = (props) => {
         },
       },
       xaxis: {
-        categories: props.cvedata.map((item) => item["@timestamp"]),
+        categories: props.cvedata.map((item) =>
+          moment(item["@timestamp"]).format("DD-MM-YYYY HH:mm:ss")
+        ),
       },
       tooltip: {
         y: [
