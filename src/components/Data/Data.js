@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Chart from "../Chart/Chart";
+import ChartWithTimestamp from "../ChartWithTimestamp/ChartWithTimestamp";
+import ChartWithoutTimestamp from "../ChartWithoutTimestamp/ChartWithoutTimestamp";
 
 const Data = () => {
   const [cvedata, setCVEdata] = useState([]);
@@ -21,7 +22,14 @@ const Data = () => {
   return (
     <div>
       <h2>Deepfence</h2>
-      {cvedata?.length > 0 ? <Chart cvedata={cvedata} /> : <p>Loading...!</p>}
+      {cvedata?.length > 0 ? (
+        <>
+          <ChartWithTimestamp cvedata={cvedata} />
+          <ChartWithoutTimestamp cvedata={cvedata} />
+        </>
+      ) : (
+        <p>Loading...!</p>
+      )}
     </div>
   );
 };

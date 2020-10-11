@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ApexChart from "react-apexcharts";
 
-const Chart = (props) => {
+const ChartWithTimestamp = (props) => {
   const [state, setState] = useState({
     options: {
       chart: {
@@ -111,4 +111,4 @@ const Chart = (props) => {
   );
 };
 
-export default Chart;
+export default ChartWithTimestamp;
