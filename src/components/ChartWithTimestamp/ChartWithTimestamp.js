@@ -3,7 +3,7 @@ import ApexChart from "react-apexcharts";
 import moment from "moment";
 
 const ChartWithTimestamp = (props) => {
-  const [state, setState] = useState({
+  const [timestampData] = useState({
     options: {
       chart: {
         height: 350,
@@ -105,8 +105,8 @@ const ChartWithTimestamp = (props) => {
   return (
     <div>
       <ApexChart
-        options={state.options}
-        series={state.series}
+        options={timestampData.options}
+        series={timestampData.series}
         type="line"
         height={350}
       />
